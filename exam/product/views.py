@@ -12,6 +12,7 @@ def product_detail(request, pk):
     products = get_object_or_404(Product, pk=pk)
     return render(request, 'product/product_detail.html', {'products': products})
 
+
 def sm_list(request):
     # Берем из базы ТОЛЬКО Космодесант
     products = Product.objects.filter(race_type='space_marine')
@@ -23,6 +24,8 @@ def sm_details(request, pk):
     return render(request, 'product/space_marines/sm_details.html', {'product': products})
 
 
+
+# IMPERIUM
 def imp_details(request, pk):
     products = get_object_or_404(Product, pk=pk, race_type='imperium')
     return render(request, 'product/imperium/imp_details.html', {'product': products})
@@ -31,6 +34,8 @@ def imp_list(request):
     products = Product.objects.filter(race_type='imperium')
     return render(request, 'product/imperium/imp_list.html', {'products': products})
 
+
+#CHAOS
 def chaos_details(request, pk):
     products = get_object_or_404(Product, pk=pk, race_type='chaos')
     return render(request, 'product/chaos/chaos_details.html', {'product': products})
@@ -40,6 +45,10 @@ def chaos_list(request):
     products = Product.objects.filter(race_type='chaos')
     return render(request, 'product/chaos/chaos_list.html', {'products': products})
 
+
+
+
+#XENOS
 def xenos_details(request, pk):
     products = get_object_or_404(Product, pk=pk, race_type='xenos')
     return render(request, 'product/xenos/xenos_details.html', {'product': products})
