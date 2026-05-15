@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог Миниатюр</title>
+
+    <style>
+        /* --- ГЛАВНЫЙ ФОН --- */
+        .page-background {
+            background-image: url('{% static "images/Image_ktpxaktpxaktpxak.png" %}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 60px 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            background-color: rgba(0, 0, 0, 0.85);;
+            color: white;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #ffffff;
+            font-size: 3em;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            text-transform: uppercase;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        /* --- НАВИГАЦИОННЫЕ КНОПКИ --- */
+        .faction-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .faction-btn {
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: 2px solid #555;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .faction-btn:hover {
+            background-color: #780000; /* Кроваво-красный при наведении */
+            border-color: #c61a1a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        /* --- БАННЕР ИНКВИЗИЦИИ --- */
+        .container-ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .container-ul-img {
+            height: 100px;
+        }
+
+        .container-ul-h1 {
+            color: white;
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .container-ul-div {
+            width: fit-content;
+            margin: 0 auto 30px auto;
+        }
+
+        /* --- СЕТКА ДЛЯ КАРТОЧЕК --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* --- КАРТОЧКА ПРОДУКТА --- */
+        .product-card {
+            background-color: rgba(0, 0, 0, 0.85); /* Исправлена прозрачность */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- ФОТОГРАФИЯ В КАРТОЧКЕ --- */
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-img-placeholder {
+            width: 100%;
+            height: 220px;
+            background-color: #ddd;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* --- ТЕКСТ В КАРТОЧКЕ --- */
+        .product-title {
+            font-size: 1.4em;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid #555;
+            padding-bottom: 10px;
+        }
+
+        .product-details p {
+            margin: 8px 0;
+            color: #cccccc;
+            font-size: 1em;
+        }
+        body{
+            margin: 0px;
+        }
+        .page-background-art{
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-background">
+    <!-- <img class="page-background-art" src='{% static "images/sdd1233.png" %}' alt="art"> -->
+    <div class="container">
+        <h1 class="page-title">Каталог Миниатюр</h1>
+
+        <div class="faction-nav">
+            <a href="imperium/" class="faction-btn">Империум</a>
+            <a href="space_marines/" class="faction-btn">Космодесант</a>
+            <a href="chaos/" class="faction-btn">Хаос</a>
+            <a href="xenos/" class="faction-btn">Ксеносы</a>
+        </div>
+        <!-- Баннер Инквизиции -->
+        <div class="container-ul-div">
+            <ul class="container-ul">
+                <li><img class="container-ul-img" src='{% static "images/inkvisition.png" %}' alt="Инквизиция"></li>
+                <li><h1 class="container-ul-h1">ОДОБРЕНО САМОЙ ИНКВИЗИЦИЕЙ</h1></li>
+                <li><img class="container-ul-img" src='{% static "images/inkvisition.png" %}' alt="Инквизиция"></li>
+            </ul>
+        </div>
+
+        <!-- НОВЫЕ КНОПКИ ФРАКЦИЙ -->
+
+
+        <!-- Сетка с продуктами -->
+        <div class="product-grid">
+            {% for product in products %}
+            <!-- Карточка одного продукта -->
+            <div class="product-card">
+
+                <!-- Если у продукта есть картинка, выводим её -->
+                {% if product.image_main %}
+                    <img src="{{ product.image_main.url }}" alt="{{ product.title }}" class="product-img">
+                {% else %}
+                    <!-- Заглушка, если фото нет -->
+                    <div class="product-img-placeholder">Нет фото</div>
+                {% endif %}
+
+
+                <h2 class="product-title">{{ product.title }}</h2>
+                <div class="product-details">
+                    <p><strong>Тип набора:</strong> {{ product.set_type }}</p>
+                    <p><strong>Раса:</strong> {{ product.race_type }}</p>
+                    <p><strong>Материал:</strong> {{ product.material }}</p>
+                    <p><strong>В наборе:</strong> {{ product.miniatures_count }} шт.</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
