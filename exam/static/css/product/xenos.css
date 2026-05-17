@@ -1,0 +1,183 @@
+/* --- exam/static/css/xenos.css --- */
+
+/* Убираем отступы браузера по умолчанию */
+body {
+    margin: 0px;
+    background-color: #000000; /* Глубокий космос */
+}
+
+.page-background {
+    /* Фон, который вы указали */
+    background-image: url('../../images/Image_ktpxaktpxaktpxak.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: rgba(5, 10, 20, 0.95); /* Темно-синяя бездна */
+    color: #e0f7fa; /* Ледяной белый/голубой для текста */
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-radius: 8px; /* Легкие скругления, свойственные инопланетным технологиям */
+    border: 1px solid #00bfff; /* Неоновый сине-голубой контур */
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.2); /* Холодное инопланетное свечение */
+}
+
+.page-title {
+    text-align: center;
+    color: #00ffff; /* Кибернетический голубой */
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+/* --- НАВИГАЦИОННЫЕ КНОПКИ --- */
+.faction-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.faction-btn {
+    background-color: #000814; /* Почти черный с синим отливом */
+    color: #00bfff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #00bfff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.faction-btn:hover {
+    background-color: #00ffff; /* Кнопка загорается неоном */
+    border-color: #ffffff;
+    color: #000000;            /* Текст становится черным для контраста */
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* --- СЕТКА ДЛЯ КАРТОЧЕК --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* --- КАРТОЧКА ПРОДУКТА --- */
+.product-card {
+    background-color: rgba(5, 10, 15, 0.9); /* Очень темный синий фон карточки */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #003366; /* Темно-синяя рамка в покое */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.2); /* Голубое свечение */
+    border-color: #00ffff; /* Рамка вспыхивает голубым */
+}
+
+.product-img, .product-img-placeholder {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #001f3f;
+}
+
+.product-img-placeholder {
+    background-color: #050a14;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00bfff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-title {
+    font-size: 1.4em;
+    color: #e0ffff; /* Светлый ледяной цвет для текста */
+    margin: 0 0 15px 0;
+    border-bottom: 2px solid #00bfff; /* Синяя линия разделитель */
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-details p {
+    margin: 8px 0;
+    color: #8ab4f8; /* Мягкий синий для обычного текста */
+    font-size: 1em;
+}
+
+.product-details strong {
+    color: #00ffff; /* Выделяем названия полей (Материал, Раса) неоновым */
+}
+
+/* Баннер (для Ксеносов можно заменить лого Инквизиции на что-то другое, но стиль вот) */
+.container-ul { list-style-type: none; display: flex; align-items: center; justify-content: center; padding: 0; }
+.container-ul-img { height: 100px; filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.4)); }
+.container-ul-h1 { color: #00ffff; margin: 0 20px; text-align: center; text-transform: uppercase; letter-spacing: 2px;}
+.container-ul-div { width: fit-content; margin: 0 auto 30px auto; border-bottom: 1px solid #003366; padding-bottom: 20px;}
+
+/* --- ПАГИНАЦИЯ --- */
+.pagination {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.step-links {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(5, 10, 15, 0.9);
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #00bfff;
+}
+
+.page-btn {
+    background-color: #000814;
+    color: #00bfff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 4px;
+    border: 1px solid #004080;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.page-btn:hover {
+    background-color: #00ffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+
+.current-page {
+    color: #e0ffff;
+    margin: 0 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}

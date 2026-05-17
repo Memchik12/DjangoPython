@@ -1,0 +1,170 @@
+/* --- exam/static/css/chaos.css --- */
+body {
+    margin: 0px;
+}
+.page-background {
+    /* Фон берем тот же, но атмосфера изменится за счет контейнеров */
+    background-image: url('../../images/Image_ktpxaktpxaktpxak.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    background-color: rgba(10, 5, 20, 0.92); /* Очень темный, почти черный фиолетовый */
+    color: white;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    border: 1px solid #4b0082; /* Рамка цвета Индиго */
+    box-shadow: 0 0 30px rgba(75, 0, 130, 0.6); /* Легкое свечение Варпа вокруг контейнера */
+}
+
+.page-title {
+    text-align: center;
+    color: #e6e6fa; /* Светло-лавандовый для контраста */
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    text-transform: uppercase;
+    /* Двойная тень: черная для читаемости, фиолетовая для магии Хаоса */
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(138, 43, 226, 0.8);
+}
+
+/* --- НАВИГАЦИОННЫЕ КНОПКИ --- */
+.faction-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.faction-btn {
+    background-color: #1a0f2e; /* Темно-сине-фиолетовая база */
+    color: #d8bfd8;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 2px solid #4b0082;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.faction-btn:hover {
+    background-color: #4b0082; /* Индиго при наведении */
+    border-color: #8a2be2;     /* Яркий фиолетово-синий край */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(138, 43, 226, 0.7); /* Яркое свечение */
+}
+
+/* --- СЕТКА ДЛЯ КАРТОЧЕК --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* --- КАРТОЧКА ПРОДУКТА --- */
+.product-card {
+    background-color: rgba(15, 10, 35, 0.85); /* Темный варп-фон карточки */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #2a1b40;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4); /* Свечение снизу */
+    border-color: #8a2be2; /* Рамка загорается неоновым фиолетовым */
+}
+
+.product-img, .product-img-placeholder {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000; /* Жесткая рамка для фото */
+}
+
+.product-img-placeholder {
+    background-color: #110a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.product-title {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    border-bottom: 2px solid #8a2be2; /* Яркая линия под именем еретика */
+    padding-bottom: 10px;
+}
+
+.product-details p {
+    margin: 8px 0;
+    color: #b0a8b9;
+    font-size: 1em;
+}
+
+/* Баннер (если будете использовать его для Хаоса) */
+.container-ul { list-style-type: none; display: flex; align-items: center; padding: 0; }
+.container-ul-img { height: 100px; filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5)); } /* Добавлено свечение на логотип */
+.container-ul-h1 { color: #e6e6fa; margin: 0 20px; text-align: center; }
+.container-ul-div { width: fit-content; margin: 0 auto 30px auto; }
+
+/* --- ПАГИНАЦИЯ --- */
+.pagination {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.step-links {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(15, 10, 35, 0.85);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #4b0082;
+}
+
+.page-btn {
+    background-color: #1a0f2e;
+    color: #d8bfd8;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid #4b0082;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.page-btn:hover {
+    background-color: #4b0082;
+    border-color: #8a2be2;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.current-page {
+    color: #e6e6fa;
+    margin: 0 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}

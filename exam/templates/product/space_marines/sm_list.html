@@ -6,7 +6,7 @@
     <title>Космодесант</title>
 
     <!-- ПОДКЛЮЧАЕМ НАШ НОВЫЙ CSS ФАЙЛ -->
-    <link rel="stylesheet" href="{% static 'css/space_marines.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product/space_marines.css' %}">
 </head>
 <body>
 
@@ -37,11 +37,11 @@
                     {% if product.image_main %}
                         <img src="{{ product.image_main.url }}" alt="{{ product.title }}" class="product-img">
                     {% else %}
-                        <div class="product-img-placeholder">Нет фото</div>
+                        <img src="{% static 'images/no_image.webp' %}" alt="Изображение отсутствует" class="product-img">
                     {% endif %}
 
                     <!-- Ссылка на детали КОНКРЕТНО Космодесанта -->
-                    
+
 
                     <div class="product-details">
                         <p><strong>Орден/Фракция:</strong> {{ product.faction }}</p>
@@ -52,6 +52,27 @@
                 </a>
             </div>
             {% endfor %}
+        </div>
+
+        <div class="pagination">
+            <span class="step-links">
+                <!-- Кнопки НАЗАД -->
+                {% if products.has_previous %}
+                    <a href="?page=1" class="page-btn">&laquo; Первая</a>
+                    <a href="?page={{ products.previous_page_number }}" class="page-btn">Назад</a>
+                {% endif %}
+
+                <!-- Текущая страница -->
+                <span class="current-page">
+                    Страница {{ products.number }} из {{ products.paginator.num_pages }}
+                </span>
+
+                <!-- Кнопки ВПЕРЕД -->
+                {% if products.has_next %}
+                    <a href="?page={{ products.next_page_number }}" class="page-btn">Вперед</a>
+                    <a href="?page={{ products.paginator.num_pages }}" class="page-btn">Последняя &raquo;</a>
+                {% endif %}
+            </span>
         </div>
 
     </div>

@@ -1,0 +1,175 @@
+/* --- exam/static/css/main_page.css --- */
+
+body {
+    margin: 0px;
+    background-color: #050505; /* Мрачная тьма */
+    color: #cccccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН С ПОРТАЛАМИ --- */
+.hero-section {
+    background-image: url('../images/Image_ktpxaktpxaktpxak.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.hero-title {
+    color: #ffffff;
+    font-size: 3.5em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+}
+
+.hero-subtitle {
+    color: #aaaaaa;
+    font-size: 1.2em;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    font-style: italic;
+}
+
+.faction-portals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.portal-card {
+    background-color: rgba(10, 10, 10, 0.85);
+    flex: 1 1 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #444;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.portal-title {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Свечение порталов */
+.portal-card.imperium:hover { border-color: #d4af37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3) inset; }
+.portal-card.imperium:hover .portal-title { color: #d4af37; }
+.portal-card.chaos:hover { border-color: #8a2be2; box-shadow: 0 0 30px rgba(138, 43, 226, 0.3) inset; }
+.portal-card.chaos:hover .portal-title { color: #8a2be2; }
+
+/* --- СЕКЦИЯ "О НАС" И "ОТЗЫВЫ" --- */
+.content-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    color: #d4af37; /* Имперское золото */
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.about-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #bbbbbb;
+    margin-bottom: 40px;
+}
+
+/* ОТЗЫВЫ */
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #0f0f0f;
+    border: 1px solid #222;
+    padding: 30px;
+    border-radius: 5px;
+    flex: 1 1 300px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #aaaaaa;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    color: #d4af37;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+/* --- FOOTER (ПОДВАЛ) --- */
+.site-footer {
+    background-color: #000000;
+    border-top: 2px solid #222;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #888888;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+}
+
+.footer-copyright {
+    color: #444444;
+    font-size: 0.8em;
+}

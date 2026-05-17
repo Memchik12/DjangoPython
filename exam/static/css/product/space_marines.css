@@ -4,7 +4,7 @@ body {
 }
 .page-background {
     /* Относительный путь: выходим из папки css и заходим в images */
-    background-image: url('../images/main.jpg');
+    background-image: url('../../images/Image_ktpxaktpxaktpxak.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -124,3 +124,44 @@ body {
 .container-ul-img { height: 100px;  }
 .container-ul-h1 { color: white; margin: 0 20px; text-align: center; }
 .container-ul-div { width: fit-content; margin: 0 auto 30px auto; }
+
+/* --- ПАГИНАЦИЯ --- */
+.pagination {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+
+.step-links {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(10, 15, 30, 0.85);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #0033a0;
+}
+
+.page-btn {
+    background-color: #222;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.page-btn:hover {
+    background-color: #0033a0; /* Синий Астартес */
+    border-color: #ffd700;     /* Золотой */
+    color: #ffd700;
+}
+
+.current-page {
+    color: #cccccc;
+    margin: 0 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+}

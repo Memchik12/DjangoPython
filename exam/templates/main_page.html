@@ -1,12 +1,92 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Warhammer40shop</title>
+    <meta charset="UTF-8">
+    <title>Warhammer 40,000 - Магазин Миниатюр</title>
+    <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/primarch.css' %}">
 </head>
 <body>
-    <link  href="{% static 'images/main.jpg'}">
-    <img src="{% static 'images/main.jpg'}">
-    <h1>Привет! ница на Django.</h1>
+
+<!-- ГЛАВНЫЙ ЭКРАН (ПОРТАЛЫ) -->
+<section class="hero-section">
+    <h1 class="hero-title">Добро пожаловать в 41-е тысячелетие</h1>
+    <p class="hero-subtitle">Во мраке далекого будущего есть только война...</p>
+    <section class="primarch-section">
+        <div class="primarch-container">
+
+            <!-- Портрет -->
+            <div>
+                <img class="primarch-portrait" src="{% static primarch.image %}" alt="{{ primarch.name }}">
+            </div>
+
+            <!-- Цитата и Имя -->
+            <div class="primarch-info">
+                <h3 class="primarch-name">{{ primarch.name }}</h3>
+                <p class="primarch-quote">{{ primarch.quote }}</p>
+            </div>
+
+        </div>
+    </section>
+    <div class="faction-portals">
+        <a href="product/imperium/" class="portal-card imperium">
+            <span class="portal-title">Империум</span>
+        </a>
+        <a href="product/space_marines/" class="portal-card imperium">
+            <span class="portal-title">Адептус Астартес</span>
+        </a>
+        <a href="product/chaos/" class="portal-card chaos">
+            <span class="portal-title">Силы Хаоса</span>
+        </a>
+        <a href="product/xenos/" class="portal-card chaos"> <!-- Цвет ксеносов или хаоса, добавьте классы в css -->
+            <span class="portal-title">Ксеносы</span>
+        </a>
+    </div>
+</section>
+
+<!-- СЕКЦИЯ "О НАС" -->
+<section class="content-section" id="about">
+    <h2 class="section-title">О нас</h2>
+    <p class="about-text">
+        Мы — надежные поставщики лучших миниатюр для настольных битв. Наша миссия — обеспечить каждого полководца, будь то верный слуга Императора или последователь Темных Богов, армией высочайшего качества. В нашем арсенале вы найдете всё необходимое для создания непобедимого легиона.
+    </p>
+</section>
+
+<!-- СЕКЦИЯ "ОТЗЫВЫ" -->
+<section class="content-section" id="testimonials">
+    <h2 class="section-title">Отзывы полководцев</h2>
+    <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">«Превосходная детализация брони! Мои Ультрамарины выглядят так, словно готовы прямо сейчас высадиться на Макрагг. Император защищает!»</p>
+            <p class="testimonial-author">— Капитан Лоялистов</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">«Черепа для Трона Черепов! Доставка быстрее, чем прыжок через Варп. Однозначно буду заказывать пополнения для своей банды снова.»</p>
+            <p class="testimonial-author">— Чемпион Кхорна</p>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">«Высшее Благо требует идеального литья, и этот магазин предоставил именно его. Дроны собираются без единой щели.»</p>
+            <p class="testimonial-author">— Эфирный Тау</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ПОДВАЛ (FOOTER) -->
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="#">Условия использования</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Связаться с нами</a>
+    </div>
+    <div class="footer-copyright">
+        &copy; 2026 Кузница Миниатюр. Все права защищены Инквизицией.
+    </div>
+</footer>
+
 </body>
 </html>

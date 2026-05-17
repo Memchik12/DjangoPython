@@ -23,6 +23,7 @@ from core.views import main_page
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/', include('product.urls')),
+    path('', main_page),
 
 ]
 if settings.DEBUG:

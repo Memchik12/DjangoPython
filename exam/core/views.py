@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
+from static.primarchs_data import primarchs_data
 
 def main_page(request):
-    return render(request, 'product_list.html')
+    primarch = primarchs_data()
+
+    return render(request, 'main_page.html', {'primarch': primarch})
