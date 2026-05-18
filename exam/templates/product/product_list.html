@@ -151,12 +151,22 @@
         .page-background-art{
 
         }
+        .back-link{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="page-background">
-    <!-- <img class="page-background-art" src='{% static "images/sdd1233.png" %}' alt="art"> -->
+    <div style="width: 200px;
+    height: 40px;
+    background-color: black;
+    text-align: center;">
+    <a href="{% url 'main_page' %}" class="back-link">← Вернуться в сектор</a>
+    </div>
+<!-- <img class="page-background-art" src='{% static "images/sdd1233.png" %}' alt="art"> -->
     <div class="container">
         <h1 class="page-title">Каталог Миниатюр</h1>
 

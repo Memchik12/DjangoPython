@@ -1,0 +1,143 @@
+/* --- exam/static/css/info_pages.css --- */
+
+body {
+    margin: 0px;
+    background-color: #000;
+    color: #cccccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-background {
+    background-image: url('../images/Image_ktpxaktpxaktpxak.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* КОНТЕЙНЕР ДЛЯ ТЕКСТА И ФОРМ */
+.info-container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 50px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.back-link {
+    display: inline-block;
+    color: #888888;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.back-link:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+}
+
+.info-title {
+    color: #d4af37; /* Имперское золото */
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* СТИЛИ ТЕКСТА (ДЛЯ ПРАВИЛ И ПОЛИТИКИ) */
+.info-content h2 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.info-content p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    text-align: justify;
+}
+
+/* ФОРМА ОБРАТНОЙ СВЯЗИ (ДЛЯ КОНТАКТОВ) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #111111;
+    border: 1px solid #444444;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    background-color: #000000;
+}
+
+.submit-btn {
+    background-color: #1a1a1a;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    padding: 15px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #d4af37;
+    color: #000000;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+}

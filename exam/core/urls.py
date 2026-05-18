@@ -18,12 +18,16 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path ,include
 from django.conf import settings
-from core.views import main_page
+from core.views import main_page, contact, privacy, terms
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/', include('product.urls')),
-    path('', main_page),
+    path('', main_page, name='main_page'),
+    path('contact/', contact),
+    path('privacy/', privacy),
+    path('terms/', terms),
+
 
 ]
 if settings.DEBUG:

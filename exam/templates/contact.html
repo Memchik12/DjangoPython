@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вокс-канал связи</title>
+    <link rel="stylesheet" href="{% static 'css/info_pages.css' %}">
+</head>
+<body>
+
+<div class="page-background">
+    <div class="info-container">
+        
+            <a href="{% url 'main_page' %}" class="back-link">← Вернуться в сектор</a>
+
+
+
+        <h1 class="info-title">Связаться с Администратумом</h1>
+
+        <div class="info-content">
+            <p style="text-align: center; margin-bottom: 40px; color: #888;">
+                Отправьте астропатическое послание нашим мастерам кузни. Мы ответим, как только сообщение преодолеет Варп-шторм.
+            </p>
+            <p style="color: #d1d1d1;">
+                manager@gmail.com
+            </p>
+            <p style="margin-bottom: 40px; color: #d1d1d1;">
+                admin@gmail.com
+            </p>
+        </div>
+
+        <form class="contact-form" action="#" method="POST">
+            {% csrf_token %} <div class="form-group">
+                <label for="name">Позывной (Имя)</label>
+                <input type="text" id="name" name="name" required placeholder="Введите ваше имя...">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Вокс-частота (Email)</label>
+                <input type="email" id="email" name="email" required placeholder="name@domain.com">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Послание</label>
+                <textarea id="message" name="message" required placeholder="Изложите суть вашего запроса..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Отправить послание</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
